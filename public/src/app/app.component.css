@@ -1,0 +1,58 @@
+.tasklistdiv, .edittaskdiv {
+    display: inline-block;
+    width: 48%;
+    margin: 5px;
+}
+
+.edittaskdiv {
+    vertical-align: top;
+    margin-top: 40px;
+}
+
+.taskheader {
+    margin-left: 20%;
+}
+
+.eachtaskcontent, .eachtaskbutton {
+    display: inline-block;
+}
+
+.tasklistandeditdiv {
+    margin-top: 20px;
+}
+
+.eachtask {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 350px;
+    height: 130px;
+    margin: 5px;
+}
+
+.eachtaskcontent {
+    width: 75%;
+    text-align: center;
+    padding: 5px;
+}
+.eachtaskbutton {
+    width: 20%;
+    margin-top: 20px;
+}
+
+.buttonedit, .buttondelete {
+    margin-top: 5px;
+}
+
+.editformdiv, .newtaskform {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 350px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+}
+
+form button {
+    margin-top: 7px;
+}
+

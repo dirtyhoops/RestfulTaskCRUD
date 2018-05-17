@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="newtaskdiv">
+      <div class="newtaskform"> 
+        <h3 class="text-center">New Task</h3>
+        <form (submit)="onSubmit()">
+          <table>
+            <tr>
+              <td><label>Title</label></td>
+              <td><input type="text" name="newTask.title" [(ngModel)]="newTask.title" /></td>
+            </tr>
+            <tr>
+              <td><label>Description</label></td>
+              <td><input type="text" name="newTask.description" [(ngModel)]="newTask.description" /></td>
+            </tr>
+          </table>          
+          <button type="submit" class="btn btn-dark btn-sm btn-block">Create</button>
+        </form>
+        
+      </div>
+    </div>
+
+
+    <div class="tasklistandeditdiv">
+      <div class="tasklistdiv">
+        <div class="taskheader">
+          <h3>Task List</h3>
+        </div>
+        <div class="eachtask" *ngFor = "let x of tasks">
+          <div class="eachtaskcontent">
+            <h4>{{x.title}}</h4>
+            <p>{{x.description}}</p>
+
+          </div>
+          <div class="eachtaskbutton">
+            <div class="buttonedit">
+              <button class="btn btn-outline-dark btn-sm" (click)="selectTask(x._id)">Edit</button>
+            </div>
+            <div class="buttondelete">
+              <button class="btn btn-outline-dark btn-sm" (click)="deleteTask(x._id)">Delete</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="edittaskdiv">
+        <div class="editformdiv" *ngIf="editTask">
+            <h3 class="text-center">Edit a task</h3>
+            <form (submit)="updateTask(editTask[0])">
+                <table>
+                  <tr>
+                    <td><label>Title</label></td>
+                    <td><input type="text" name="editTask[0].title" [(ngModel)]="editTask[0].title" /></td>
+                  </tr>
+                  <tr>
+                    <td><label>Description</label></td>
+                    <td><input type="text" name="editTask[0].description" [(ngModel)]="editTask[0].description" /></td>
+                  </tr>
+                </table>          
+                <button type="submit" class="btn btn-dark btn-sm btn-block">Edit</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end of container -->
+</div>
